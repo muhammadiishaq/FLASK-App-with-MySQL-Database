@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Trainers</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .nav-links {
+            margin: 20px 0;
+        }
+        .nav-links a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007bff;
+            padding: 8px 12px;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+        }
+        .nav-links a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Trainer Details</h1>
+    
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/trainer">Add New Trainer</a>
+        <a href="/view_trainers">View All Trainers</a>
+    </div>
+
+    {% if trainers %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Designation</th>
+                    <th>Course</th>
+                    <th>Date Added</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trainer in trainers %}
+                <tr>
+                    <td>{{ trainer[0] }}</td>
+                    <td>{{ trainer[1] }}</td>
+                    <td>{{ trainer[2] }}</td>
+                    <td>{{ trainer[3] }}</td>
+                    <td>{{ trainer[4] }}</td>
+                    <td>{{ trainer[5] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No trainers found in the database.</p>
+        <p><a href="/trainer">Add the first trainer</a></p>
+    {% endif %}
+</body>
+</html>

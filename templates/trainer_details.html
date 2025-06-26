@@ -2,27 +2,74 @@
 <html>
 <head>
     <title>Trainer Details</title>
+    <style>
+        .nav-links {
+            margin: 20px 0;
+        }
+        .nav-links a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007bff;
+            padding: 8px 12px;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+        }
+        .nav-links a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td {
+            padding: 8px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        input[type="submit"] {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Trainer Details</h1>
+    <h1>Add New Trainer</h1>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/trainer">Add New Trainer</a>
+        <a href="/view_trainers">View All Trainers</a>
+    </div>
 
     <form method="post" action="/trainer_create" name="trainer_form">
         <table>
             <tr>
                 <td>First Name</td>
-                <td><input type="text" name="fname"></td>
+                <td><input type="text" name="fname" required></td>
             </tr>
             <tr>
                 <td>Last Name</td>
-                <td><input type="text" name="lname"></td>
+                <td><input type="text" name="lname" required></td>
             </tr>
             <tr>
                 <td>Designation</td>
-                <td><input type="text" name="design"></td>
+                <td><input type="text" name="design" required></td>
             </tr>
             <tr>
                 <td>Course</td>
-                <td><input type="text" name="course"></td>
+                <td><input type="text" name="course" required></td>
             </tr>
             <tr>
                 <td colspan="2">
